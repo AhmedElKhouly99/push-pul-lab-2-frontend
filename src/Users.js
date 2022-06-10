@@ -17,6 +17,7 @@ function TabPanel(props) {
             id={`vertical-tabpanel-${index}`}
             aria-labelledby={`vertical-tab-${index}`}
             {...other}
+            style={{width: '100%'}}
         >
             {value === index && (
                 <Box sx={{ p: 3 }}>
@@ -63,13 +64,6 @@ export default function Users({ users, socket }) {
                 {
                     users ? users.map((u, index) => <Tab label={`User ID: ${u}`} {...a11yProps(index)} />) : null
                 }
-                {/* <Tab label="Item One" {...a11yProps(0)} />
-        <Tab label="Item Two" {...a11yProps(1)} />
-        <Tab label="Item Three" {...a11yProps(2)} />
-        <Tab label="Item Four" {...a11yProps(3)} />
-        <Tab label="Item Five" {...a11yProps(4)} />
-        <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} /> */}
             </Tabs>
             {
                  users ?users.map((u, index) => {
@@ -78,27 +72,7 @@ export default function Users({ users, socket }) {
                     </TabPanel>)
                 }):null
             }
-            {/* <TabPanel value={value} index={0}>
-                Item One
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                Item Two
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                Item Three
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-                Item Four
-            </TabPanel>
-            <TabPanel value={value} index={4}>
-                Item Five
-            </TabPanel>
-            <TabPanel value={value} index={5}>
-                Item Six
-            </TabPanel>
-            <TabPanel value={value} index={6}>
-                Item Seven
-            </TabPanel> */}
+        
         </Box>
     );
 }
